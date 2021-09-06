@@ -1,0 +1,447 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>redstone-smartweave</title>
+	<meta name="description" content="Documentation for redstone-smartweave">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">redstone-smartweave</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>redstone-smartweave</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#smartweave-sdk-v2" id="smartweave-sdk-v2" style="color: inherit; text-decoration: none;">
+					<h1>SmartWeave SDK v2</h1>
+				</a>
+				<p>SmartWeave SDK v2 is the new, rewritten from scratch, SDK implementation proposal for interaction with SmartWeave Contracts.
+					It has been built with performance (e.g. caching at multiple layers, Arweave calls optimization)
+				and modularity (e.g. ability to use different types of caches, imported from external libraries) in mind.</p>
+				<a href="#warning-sdk-is-currently-in-alpha-version" id="warning-sdk-is-currently-in-alpha-version" style="color: inherit; text-decoration: none;">
+					<h4>Warning: SDK is currently in alpha version.</h4>
+				</a>
+				<p>We&#39;re already using the new SDK on production, both in our webapp and nodes.
+				However, if you&#39;d like to use it in production as well, please contact us on <a href="https://discord.com/invite/PVxBZKFr46">discord</a> to ensure a smooth transition and get help with testing.</p>
+				<p>The base motivation behind rewriting SmartWeave SDK (and roadmap proposal) has been described <a href="https://github.com/redstone-finance/redstone-smartweave/blob/main/docs/ROAD_MAP.md">here</a>.<br>To further improve contract state evaluation time, one can additionally use AWS CloudFront based Arweave cache described in <a href="https://github.com/redstone-finance/redstone-smartweave-contracts/blob/main/docs/CACHE.md">AWS CloudFront Cache</a>.</p>
+				<ul>
+					<li><a href="#installation-and-import">Installation and import</a></li>
+					<li><a href="#examples">Examples</a></li>
+					<li><a href="#missing-features">Missing features</a></li>
+					<li><a href="#source-code-structure">Source code structure</a><ul>
+							<li><a href="#core-package">core package</a></li>
+							<li><a href="#contract-package">contract package</a></li>
+							<li><a href="#cache-package">cache package</a></li>
+							<li><a href="#plugins-package">plugins package</a></li>
+							<li><a href="#legacy-package">legacy package</a></li>
+							<li><a href="#logger-package">logger package</a></li>
+						</ul>
+					</li>
+				</ul>
+				<a href="#installation-and-import" id="installation-and-import" style="color: inherit; text-decoration: none;">
+					<h3>Installation and import</h3>
+				</a>
+				<a href="#using-npm" id="using-npm" style="color: inherit; text-decoration: none;">
+					<h4>Using npm</h4>
+				</a>
+				<p><code>npm install redstone-smartweave</code></p>
+				<a href="#using-yarn" id="using-yarn" style="color: inherit; text-decoration: none;">
+					<h4>Using yarn</h4>
+				</a>
+				<p><code>yarn add redstone-smartweave</code></p>
+				<p>You can import the full API or individual modules.</p>
+				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #0000FF">*</span><span style="color: #000000"> </span><span style="color: #AF00DB">as</span><span style="color: #000000"> </span><span style="color: #001080">SmartWeaveSdk</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;redstone-smartweave&#039;</span>
+</code></pre>
+				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">SmartWeave</span><span style="color: #000000">, </span><span style="color: #001080">Contract</span><span style="color: #000000">, ... } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;redstone-smartweave&#039;</span>
+</code></pre>
+				<a href="#examples" id="examples" style="color: inherit; text-decoration: none;">
+					<h3>Examples</h3>
+				</a>
+				<p>Usage examples can be found in
+					a dedicated <a href="https://github.com/redstone-finance/redstone-smartweave-examples">repository</a>.
+				Please follow instructions in its README.md (and detail-ish comments in the examples files) to learn more.</p>
+				<a href="#missing-features" id="missing-features" style="color: inherit; text-decoration: none;">
+					<h3>Missing features</h3>
+				</a>
+				<p>The features below are not yet implemented. They will be either added soon to the core SDK, or as
+				a separate libraries, built on top of the SDK:</p>
+				<ul>
+					<li>deploying contracts</li>
+					<li>arTransfer and tags handling for &quot;viewState&quot; (&quot;interactRead&quot;)</li>
+					<li>&quot;dry-runs&quot; (though not sure if this should be part of the &quot;core&quot; SDK)</li>
+					<li>CLI (though not sure if that is a necessary - even if, it should be
+					probably a separate lib built on top of the base SDK).</li>
+				</ul>
+				<a href="#source-code-structure" id="source-code-structure" style="color: inherit; text-decoration: none;">
+					<h3>Source code structure</h3>
+				</a>
+				<p>SDK&#39;s source code is divided into few main modules.</p>
+				<a href="#core-package" id="core-package" style="color: inherit; text-decoration: none;">
+					<h4>Core package</h4>
+				</a>
+				<p>Code located in the <code>core</code> package contains all the main modules of the reference SDK v2 implementation.
+					These modules are used to create instances of <code>SmartWeave</code> - main class that allows to connect to contracts.
+				There are currently 5 core interfaces:</p>
+				<ol>
+					<li><code>DefinitionLoader</code> - it is responsible for loading contract&#39;s definition (i.e. its source code, initial state, etc.)
+					Its reference implementation is <code>ContractDefinitionLoader</code>.</li>
+					<li><code>ExecutorFactory</code> - factory responsible for creating executors that run contract&#39;s source code. Its reference implementation is
+						<code>HandlerExecutorFactory</code> - which produces handlers that run contracts written using the &quot;handle&quot; function.
+						In the future - more advanced <code>ExecutorFactory</code>ies can be implemented - e.g. such that will allow
+					code exception isolation or running contracts written in a more <code>OOP</code> style.<br>Please <strong>note</strong> that new SDK version allows calling <code>viewState</code> (<code>interactRead</code> from the current version) from within the contract source code.</li>
+					<li><code>InteractionsLoader</code> - responsible for loading interaction transactions, with reference implementation in <code>ContractInteractionsLoader</code></li>
+					<li><code>InteractionsSorter</code> - self-explanatory ;-) Two implementations - <code>LexicographicalInteractionsSorter</code> - same, as in
+					current SDK, and <code>LexicographicalInteractionsSorter</code> - based on a PR <a href="https://github.com/ArweaveTeam/SmartWeave/pull/82">https://github.com/ArweaveTeam/SmartWeave/pull/82</a></li>
+					<li><code>StateEvaluator</code> - responsible for evaluating the state for a given set of transactions, with reference <code>DefaultStateEvaluator</code>.<br>Please <strong>note</strong> that <code>DefaultStateEvaluator</code> currently by default doest <strong>not stop</strong> processing in case of any <code>exception</code> result type from state evaluation (to be backwards compatible
+						with current SDK version) - though we still can&#39;t decide whether it is a proper behaviour.
+					You can change this behaviour by modifying <code>EvaluationOptions</code>.</li>
+				</ol>
+				<p>Additionally, the core package contains the definition of all the tags used by the protocol - <code>SmartWeaveTags</code>.</p>
+				<p>All interfaces and implementations are further described in TSDocs.</p>
+				<a href="#contract-package" id="contract-package" style="color: inherit; text-decoration: none;">
+					<h4>Contract package</h4>
+				</a>
+				<p>Code located in the <code>contract</code> package contains base contract interface - <code>Contract</code> and its
+					&quot;reference&quot; implementation - <code>HandlerBasedContract</code> - that allows to interact with contracts.
+					To connect to a contract, first an instance of the <code>SmartWeave</code> must be created.
+				Refer the TSDocs for more information.</p>
+				<a href="#cache-package" id="cache-package" style="color: inherit; text-decoration: none;">
+					<h4>Cache package</h4>
+				</a>
+				<p>Code located in the <code>cache</code> package contains base interfaces - <code>SwCache</code> and <code>BlockHeightSwCache</code>
+					and some example implementations. These caches can be used while configuring <code>SmartWeave</code>
+					instance - to greatly improve processing speed (i.e. contract&#39;s state evaluation)  .
+				Refer the TSDocs for more information.</p>
+				<a href="#plugins-package" id="plugins-package" style="color: inherit; text-decoration: none;">
+					<h4>Plugins package</h4>
+				</a>
+				<p>This package contains some example extensions to base implementation, adding features like &quot;Evolve&quot;, caching
+				capabilities to <code>InteractionsLoader</code>, <code>ExecutorFactory</code> and <code>StateEvaluator</code>, etc.</p>
+				<p>One cool plugin is the <code>DebuggableExecutorFactor</code> - it&#39;s a wrapper over <code>ExecutorFactory</code> that adds a feature
+					of changing the contract&#39;s code &quot;on the fly&quot; (while evaluating the state) - without the need of deploying anything on Arweave.<br>This is really useful while debugging contracts (e.g. quickly adding some console.logs in contract&#39;s source code)
+				or quickly testing new features.</p>
+				<a href="#legacy-package" id="legacy-package" style="color: inherit; text-decoration: none;">
+					<h4>Legacy package</h4>
+				</a>
+				<p>This package contains some code from the current SDK implementation - most of
+				this code will be probably remove with the future releases of the new SDK implementation.</p>
+				<a href="#logger-package" id="logger-package" style="color: inherit; text-decoration: none;">
+					<h4>Logger package</h4>
+				</a>
+				<p>TODO: add description</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-enum">
+						<a href="enums/SmartWeaveErrorType.html" class="tsd-kind-icon">Smart<wbr>Weave<wbr>Error<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/SmartWeaveTags.html" class="tsd-kind-icon">Smart<wbr>Weave<wbr>Tags</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/Benchmark.html" class="tsd-kind-icon">Benchmark</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/BlockHeightCacheResult.html" class="tsd-kind-icon">Block<wbr>Height<wbr>Cache<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/BlockHeightInteractionsSorter.html" class="tsd-kind-icon">Block<wbr>Height<wbr>Interactions<wbr>Sorter</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/BlockHeightKey.html" class="tsd-kind-icon">Block<wbr>Height<wbr>Key</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/BsonFileBlockHeightSwCache.html" class="tsd-kind-icon">Bson<wbr>File<wbr>Block<wbr>Height<wbr>SwCache</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/CacheableContractInteractionsLoader.html" class="tsd-kind-icon">Cacheable<wbr>Contract<wbr>Interactions<wbr>Loader</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/CacheableExecutorFactory.html" class="tsd-kind-icon">Cacheable<wbr>Executor<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/CacheableStateEvaluator.html" class="tsd-kind-icon">Cacheable<wbr>State<wbr>Evaluator</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/ConsoleLogger.html" class="tsd-kind-icon">Console<wbr>Logger</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/ConsoleLoggerFactory.html" class="tsd-kind-icon">Console<wbr>Logger<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/ContractDefinitionLoader.html" class="tsd-kind-icon">Contract<wbr>Definition<wbr>Loader</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/ContractInteractionsLoader.html" class="tsd-kind-icon">Contract<wbr>Interactions<wbr>Loader</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/DebuggableExecutorFactory.html" class="tsd-kind-icon">Debuggable<wbr>Executor<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/DefaultEvaluationOptions.html" class="tsd-kind-icon">Default<wbr>Evaluation<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/DefaultStateEvaluator.html" class="tsd-kind-icon">Default<wbr>State<wbr>Evaluator</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/EvalStateResult.html" class="tsd-kind-icon">Eval<wbr>State<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/Evolve.html" class="tsd-kind-icon">Evolve</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/HandlerBasedContract.html" class="tsd-kind-icon">Handler<wbr>Based<wbr>Contract</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/HandlerExecutorFactory.html" class="tsd-kind-icon">Handler<wbr>Executor<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/LexicographicalInteractionsSorter.html" class="tsd-kind-icon">Lexicographical<wbr>Interactions<wbr>Sorter</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/LoggerFactory.html" class="tsd-kind-icon">Logger<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/MemBlockHeightSwCache.html" class="tsd-kind-icon">Mem<wbr>Block<wbr>Height<wbr>SwCache</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/MemCache.html" class="tsd-kind-icon">Mem<wbr>Cache</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/SmartWeave.html" class="tsd-kind-icon">Smart<wbr>Weave</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/SmartWeaveBuilder.html" class="tsd-kind-icon">Smart<wbr>Weave<wbr>Builder</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/SmartWeaveError.html" class="tsd-kind-icon">Smart<wbr>Weave<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/SmartWeaveGlobal.html" class="tsd-kind-icon">Smart<wbr>Weave<wbr>Global</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/SmartWeaveNodeFactory.html" class="tsd-kind-icon">Smart<wbr>Weave<wbr>Node<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/SmartWeaveWebFactory.html" class="tsd-kind-icon">Smart<wbr>Weave<wbr>Web<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/TsLogFactory.html" class="tsd-kind-icon">Ts<wbr>Log<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/BlockHeightSwCache.html" class="tsd-kind-icon">Block<wbr>Height<wbr>SwCache</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/Contract.html" class="tsd-kind-icon">Contract</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ContractApi.html" class="tsd-kind-icon">Contract<wbr>Api</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/DefinitionLoader.html" class="tsd-kind-icon">Definition<wbr>Loader</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/EvaluationOptions.html" class="tsd-kind-icon">Evaluation<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/EvolveCompatibleState.html" class="tsd-kind-icon">Evolve<wbr>Compatible<wbr>State</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ExecutionContextModifier.html" class="tsd-kind-icon">Execution<wbr>Context<wbr>Modifier</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/ExecutorFactory.html" class="tsd-kind-icon">Executor<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/GQLAmountInterface.html" class="tsd-kind-icon">GQLAmount<wbr>Interface</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/GQLBlockInterface.html" class="tsd-kind-icon">GQLBlock<wbr>Interface</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/GQLEdgeInterface.html" class="tsd-kind-icon">GQLEdge<wbr>Interface</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/GQLMetaDataInterface.html" class="tsd-kind-icon">GQLMeta<wbr>Data<wbr>Interface</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/GQLNodeInterface.html" class="tsd-kind-icon">GQLNode<wbr>Interface</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/GQLOwnerInterface.html" class="tsd-kind-icon">GQLOwner<wbr>Interface</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/GQLPageInfoInterface.html" class="tsd-kind-icon">GQLPage<wbr>Info<wbr>Interface</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/GQLResultInterface.html" class="tsd-kind-icon">GQLResult<wbr>Interface</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/GQLTagInterface.html" class="tsd-kind-icon">GQLTag<wbr>Interface</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/GQLTransactionsResultInterface.html" class="tsd-kind-icon">GQLTransactions<wbr>Result<wbr>Interface</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/HandlerApi.html" class="tsd-kind-icon">Handler<wbr>Api</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/InteractionTx.html" class="tsd-kind-icon">Interaction<wbr>Tx</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/InteractionsLoader.html" class="tsd-kind-icon">Interactions<wbr>Loader</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/InteractionsSorter.html" class="tsd-kind-icon">Interactions<wbr>Sorter</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/RedStoneLogger.html" class="tsd-kind-icon">Red<wbr>Stone<wbr>Logger</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/StateEvaluator.html" class="tsd-kind-icon">State<wbr>Evaluator</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/SwCache.html" class="tsd-kind-icon">Sw<wbr>Cache</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ArTransfer" class="tsd-kind-icon">Ar<wbr>Transfer</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#ArWallet" class="tsd-kind-icon">Ar<wbr>Wallet</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="modules.html#ContractDefinition" class="tsd-kind-icon">Contract<wbr>Definition</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="modules.html#ContractInteraction" class="tsd-kind-icon">Contract<wbr>Interaction</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="modules.html#ExecutionContext" class="tsd-kind-icon">Execution<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="modules.html#HandlerFunction" class="tsd-kind-icon">Handler<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="modules.html#HandlerResult" class="tsd-kind-icon">Handler<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="modules.html#InteractionResult" class="tsd-kind-icon">Interaction<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#LogLevel" class="tsd-kind-icon">Log<wbr>Level</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#Tags" class="tsd-kind-icon">Tags</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="modules.html#defaultLoggerOptions" class="tsd-kind-icon">default<wbr>Logger<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="modules.html#emptyTransfer" class="tsd-kind-icon">empty<wbr>Transfer</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#arrayToHex" class="tsd-kind-icon">array<wbr>ToHex</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#createTx" class="tsd-kind-icon">create<wbr>Tx</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#getTag" class="tsd-kind-icon">get<wbr>Tag</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#sleep" class="tsd-kind-icon">sleep</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

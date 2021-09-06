@@ -1,0 +1,633 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>HandlerBasedContract | redstone-smartweave</title>
+	<meta name="description" content="Documentation for redstone-smartweave">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">redstone-smartweave</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">redstone-smartweave</a>
+				</li>
+				<li>
+					<a href="HandlerBasedContract.html">HandlerBasedContract</a>
+				</li>
+			</ul>
+			<h1>Class HandlerBasedContract&lt;State&gt;</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>An implementation of <a href="../interfaces/Contract.html">Contract</a> that is backwards compatible with current style
+						of writing SW contracts (ie. using the &quot;handle&quot; function).</p>
+					</div>
+					<p>It requires <a href="../interfaces/ExecutorFactory.html">ExecutorFactory</a> that is using <a href="../interfaces/HandlerApi.html">HandlerApi</a> generic type.</p>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-type-parameters">
+				<h3>Type parameters</h3>
+				<ul class="tsd-type-parameters">
+					<li>
+						<h4>State</h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">HandlerBasedContract</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implements</h3>
+				<ul class="tsd-hierarchy">
+					<li><a href="../interfaces/Contract.html" class="tsd-signature-type" data-tsd-kind="Interface">Contract</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter"><a href="HandlerBasedContract.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="HandlerBasedContract.html#evaluationOptions" class="tsd-kind-icon">evaluation<wbr>Options</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="HandlerBasedContract.html#networkInfo" class="tsd-kind-icon">network<wbr>Info</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="HandlerBasedContract.html#wallet" class="tsd-kind-icon">wallet</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="HandlerBasedContract.html#connect" class="tsd-kind-icon">connect</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="HandlerBasedContract.html#createExecutionContext" class="tsd-kind-icon">create<wbr>Execution<wbr>Context</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="HandlerBasedContract.html#createExecutionContextFromTx" class="tsd-kind-icon">create<wbr>Execution<wbr>Context<wbr>From<wbr>Tx</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="HandlerBasedContract.html#maybeClearNetworkInfo" class="tsd-kind-icon">maybe<wbr>Clear<wbr>Network<wbr>Info</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="HandlerBasedContract.html#readState" class="tsd-kind-icon">read<wbr>State</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="HandlerBasedContract.html#setEvaluationOptions" class="tsd-kind-icon">set<wbr>Evaluation<wbr>Options</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter"><a href="HandlerBasedContract.html#viewState" class="tsd-kind-icon">view<wbr>State</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter"><a href="HandlerBasedContract.html#viewStateForTx" class="tsd-kind-icon">view<wbr>State<wbr>For<wbr>Tx</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="HandlerBasedContract.html#waitForConfirmation" class="tsd-kind-icon">wait<wbr>For<wbr>Confirmation</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter"><a href="HandlerBasedContract.html#writeInteraction" class="tsd-kind-icon">write<wbr>Interaction</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Handler<wbr>Based<wbr>Contract&lt;State&gt;<span class="tsd-signature-symbol">(</span>contractTxId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, smartweave<span class="tsd-signature-symbol">: </span><a href="SmartWeave.html" class="tsd-signature-type" data-tsd-kind="Class">SmartWeave</a>, callingContract<span class="tsd-signature-symbol">?: </span><a href="../interfaces/Contract.html" class="tsd-signature-type" data-tsd-kind="Interface">Contract</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="HandlerBasedContract.html" class="tsd-signature-type" data-tsd-kind="Class">HandlerBasedContract</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/redstone-finance/redstone-smartweave/blob/67d4774/src/contract/HandlerBasedContract.ts#L37">projects/redstone/redstone-smartweave/src/contract/HandlerBasedContract.ts:37</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>State</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>contractTxId: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>smartweave: <a href="SmartWeave.html" class="tsd-signature-type" data-tsd-kind="Class">SmartWeave</a></h5>
+								</li>
+								<li>
+									<h5>callingContract: <a href="../interfaces/Contract.html" class="tsd-signature-type" data-tsd-kind="Interface">Contract</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = null</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="HandlerBasedContract.html" class="tsd-signature-type" data-tsd-kind="Class">HandlerBasedContract</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="evaluationOptions" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> evaluation<wbr>Options</h3>
+					<div class="tsd-signature tsd-kind-icon">evaluation<wbr>Options<span class="tsd-signature-symbol">:</span> <a href="../interfaces/EvaluationOptions.html" class="tsd-signature-type" data-tsd-kind="Interface">EvaluationOptions</a><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/redstone-finance/redstone-smartweave/blob/67d4774/src/contract/HandlerBasedContract.ts#L34">projects/redstone/redstone-smartweave/src/contract/HandlerBasedContract.ts:34</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="networkInfo" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> network<wbr>Info</h3>
+					<div class="tsd-signature tsd-kind-icon">network<wbr>Info<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">NetworkInfoInterface</span><span class="tsd-signature-symbol"> = null</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/redstone-finance/redstone-smartweave/blob/67d4774/src/contract/HandlerBasedContract.ts#L35">projects/redstone/redstone-smartweave/src/contract/HandlerBasedContract.ts:35</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="wallet" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagOptional">Optional</span> wallet</h3>
+					<div class="tsd-signature tsd-kind-icon">wallet<span class="tsd-signature-symbol">:</span> <a href="../modules.html#ArWallet" class="tsd-signature-type" data-tsd-kind="Type alias">ArWallet</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/redstone-finance/redstone-smartweave/blob/67d4774/src/contract/HandlerBasedContract.ts#L33">projects/redstone/redstone-smartweave/src/contract/HandlerBasedContract.ts:33</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="connect" class="tsd-anchor"></a>
+					<h3>connect</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">connect<span class="tsd-signature-symbol">(</span>wallet<span class="tsd-signature-symbol">: </span><a href="../modules.html#ArWallet" class="tsd-signature-type" data-tsd-kind="Type alias">ArWallet</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/Contract.html" class="tsd-signature-type" data-tsd-kind="Interface">Contract</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/Contract.html">Contract</a>.<a href="../interfaces/Contract.html#connect">connect</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/redstone-finance/redstone-smartweave/blob/67d4774/src/contract/HandlerBasedContract.ts#L55">projects/redstone/redstone-smartweave/src/contract/HandlerBasedContract.ts:55</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Allows to connect wallet to a contract.
+										Connecting a wallet MAY be done before &quot;viewState&quot; (depending on contract implementation,
+										ie. whether called contract&#39;s function required &quot;caller&quot; info)
+									Connecting a wallet MUST be done before &quot;writeInteraction&quot;.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>wallet: <a href="../modules.html#ArWallet" class="tsd-signature-type" data-tsd-kind="Type alias">ArWallet</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/Contract.html" class="tsd-signature-type" data-tsd-kind="Interface">Contract</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="createExecutionContext" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> create<wbr>Execution<wbr>Context</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Execution<wbr>Context<span class="tsd-signature-symbol">(</span>contractTxId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, blockHeight<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules.html#ExecutionContext" class="tsd-signature-type" data-tsd-kind="Type alias">ExecutionContext</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/HandlerApi.html" class="tsd-signature-type" data-tsd-kind="Interface">HandlerApi</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/redstone-finance/redstone-smartweave/blob/67d4774/src/contract/HandlerBasedContract.ts#L236">projects/redstone/redstone-smartweave/src/contract/HandlerBasedContract.ts:236</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>contractTxId: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> blockHeight: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules.html#ExecutionContext" class="tsd-signature-type" data-tsd-kind="Type alias">ExecutionContext</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/HandlerApi.html" class="tsd-signature-type" data-tsd-kind="Interface">HandlerApi</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="createExecutionContextFromTx" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> create<wbr>Execution<wbr>Context<wbr>From<wbr>Tx</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Execution<wbr>Context<wbr>From<wbr>Tx<span class="tsd-signature-symbol">(</span>contractTxId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, transaction<span class="tsd-signature-symbol">: </span><a href="../interfaces/InteractionTx.html" class="tsd-signature-type" data-tsd-kind="Interface">InteractionTx</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules.html#ExecutionContext" class="tsd-signature-type" data-tsd-kind="Type alias">ExecutionContext</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/HandlerApi.html" class="tsd-signature-type" data-tsd-kind="Interface">HandlerApi</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/redstone-finance/redstone-smartweave/blob/67d4774/src/contract/HandlerBasedContract.ts#L296">projects/redstone/redstone-smartweave/src/contract/HandlerBasedContract.ts:296</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>contractTxId: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>transaction: <a href="../interfaces/InteractionTx.html" class="tsd-signature-type" data-tsd-kind="Interface">InteractionTx</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules.html#ExecutionContext" class="tsd-signature-type" data-tsd-kind="Type alias">ExecutionContext</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/HandlerApi.html" class="tsd-signature-type" data-tsd-kind="Interface">HandlerApi</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="maybeClearNetworkInfo" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> maybe<wbr>Clear<wbr>Network<wbr>Info</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">maybe<wbr>Clear<wbr>Network<wbr>Info<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/redstone-finance/redstone-smartweave/blob/67d4774/src/contract/HandlerBasedContract.ts#L324">projects/redstone/redstone-smartweave/src/contract/HandlerBasedContract.ts:324</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="readState" class="tsd-anchor"></a>
+					<h3>read<wbr>State</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">read<wbr>State<span class="tsd-signature-symbol">(</span>blockHeight<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, currentTx<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>contractTxId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>interactionTxId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="EvalStateResult.html" class="tsd-signature-type" data-tsd-kind="Class">EvalStateResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/Contract.html">Contract</a>.<a href="../interfaces/Contract.html#readState">readState</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/redstone-finance/redstone-smartweave/blob/67d4774/src/contract/HandlerBasedContract.ts#L68">projects/redstone/redstone-smartweave/src/contract/HandlerBasedContract.ts:68</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns state of the contract at required blockHeight.
+									Similar to {@link readContract} from the current version.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> blockHeight: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> currentTx: <span class="tsd-signature-symbol">{ </span>contractTxId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>interactionTxId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="EvalStateResult.html" class="tsd-signature-type" data-tsd-kind="Class">EvalStateResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setEvaluationOptions" class="tsd-anchor"></a>
+					<h3>set<wbr>Evaluation<wbr>Options</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Evaluation<wbr>Options<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/EvaluationOptions.html" class="tsd-signature-type" data-tsd-kind="Interface">EvaluationOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/Contract.html" class="tsd-signature-type" data-tsd-kind="Interface">Contract</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/Contract.html">Contract</a>.<a href="../interfaces/Contract.html#setEvaluationOptions">setEvaluationOptions</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/redstone-finance/redstone-smartweave/blob/67d4774/src/contract/HandlerBasedContract.ts#L60">projects/redstone/redstone-smartweave/src/contract/HandlerBasedContract.ts:60</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Allows to set (<a href="../interfaces/EvaluationOptions.html">EvaluationOptions</a>)</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>options: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/EvaluationOptions.html" class="tsd-signature-type" data-tsd-kind="Interface">EvaluationOptions</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/Contract.html" class="tsd-signature-type" data-tsd-kind="Interface">Contract</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+					<a name="viewState" class="tsd-anchor"></a>
+					<h3>view<wbr>State</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">view<wbr>State&lt;Input, View&gt;<span class="tsd-signature-symbol">(</span>input<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Input</span>, blockHeight<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, tags<span class="tsd-signature-symbol">?: </span><a href="../modules.html#Tags" class="tsd-signature-type" data-tsd-kind="Type alias">Tags</a>, transfer<span class="tsd-signature-symbol">?: </span><a href="../modules.html#ArTransfer" class="tsd-signature-type" data-tsd-kind="Type alias">ArTransfer</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules.html#InteractionResult" class="tsd-signature-type" data-tsd-kind="Type alias">InteractionResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">View</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/Contract.html">Contract</a>.<a href="../interfaces/Contract.html#viewState">viewState</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/redstone-finance/redstone-smartweave/blob/67d4774/src/contract/HandlerBasedContract.ts#L82">projects/redstone/redstone-smartweave/src/contract/HandlerBasedContract.ts:82</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the &quot;view&quot; of the state, computed by the SWC -
+										ie. object that is a derivative of a current state and some specific
+										smart contract business logic.
+									Similar to the &quot;interactRead&quot; from the current SDK version.</p>
+								</div>
+								<p>TODO: tags and transfer params are not currently handled.</p>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>Input</h4>
+								</li>
+								<li>
+									<h4>View</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>input: <span class="tsd-signature-type">Input</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> blockHeight: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>tags: <a href="../modules.html#Tags" class="tsd-signature-type" data-tsd-kind="Type alias">Tags</a><span class="tsd-signature-symbol"> = []</span></h5>
+								</li>
+								<li>
+									<h5>transfer: <a href="../modules.html#ArTransfer" class="tsd-signature-type" data-tsd-kind="Type alias">ArTransfer</a><span class="tsd-signature-symbol"> = ...</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules.html#InteractionResult" class="tsd-signature-type" data-tsd-kind="Type alias">InteractionResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">View</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+					<a name="viewStateForTx" class="tsd-anchor"></a>
+					<h3>view<wbr>State<wbr>For<wbr>Tx</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">view<wbr>State<wbr>For<wbr>Tx&lt;Input, View&gt;<span class="tsd-signature-symbol">(</span>input<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Input</span>, transaction<span class="tsd-signature-symbol">: </span><a href="../interfaces/InteractionTx.html" class="tsd-signature-type" data-tsd-kind="Interface">InteractionTx</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules.html#InteractionResult" class="tsd-signature-type" data-tsd-kind="Type alias">InteractionResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">View</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/Contract.html">Contract</a>.<a href="../interfaces/Contract.html#viewStateForTx">viewStateForTx</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/redstone-finance/redstone-smartweave/blob/67d4774/src/contract/HandlerBasedContract.ts#L161">projects/redstone/redstone-smartweave/src/contract/HandlerBasedContract.ts:161</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>A version of the viewState method to be used from within the contract&#39;s source code.
+										The transaction passed as an argument is the currently processed interaction transaction.
+										The &quot;caller&quot; will be se to the owner of the interaction transaction, that
+									requires to call this method.</p>
+								</div>
+								<p>note: calling &quot;interactRead&quot; from withing contract&#39;s source code was not previously possible -
+								this is a new feature.</p>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>Input</h4>
+								</li>
+								<li>
+									<h4>View</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>input: <span class="tsd-signature-type">Input</span></h5>
+								</li>
+								<li>
+									<h5>transaction: <a href="../interfaces/InteractionTx.html" class="tsd-signature-type" data-tsd-kind="Interface">InteractionTx</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules.html#InteractionResult" class="tsd-signature-type" data-tsd-kind="Type alias">InteractionResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">View</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="waitForConfirmation" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> wait<wbr>For<wbr>Confirmation</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">wait<wbr>For<wbr>Confirmation<span class="tsd-signature-symbol">(</span>transactionId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TransactionStatusResponse</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/redstone-finance/redstone-smartweave/blob/67d4774/src/contract/HandlerBasedContract.ts#L221">projects/redstone/redstone-smartweave/src/contract/HandlerBasedContract.ts:221</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>transactionId: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TransactionStatusResponse</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+					<a name="writeInteraction" class="tsd-anchor"></a>
+					<h3>write<wbr>Interaction</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">write<wbr>Interaction&lt;Input&gt;<span class="tsd-signature-symbol">(</span>input<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Input</span>, tags<span class="tsd-signature-symbol">?: </span><a href="../modules.html#Tags" class="tsd-signature-type" data-tsd-kind="Type alias">Tags</a>, transfer<span class="tsd-signature-symbol">?: </span><a href="../modules.html#ArTransfer" class="tsd-signature-type" data-tsd-kind="Type alias">ArTransfer</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/Contract.html">Contract</a>.<a href="../interfaces/Contract.html#writeInteraction">writeInteraction</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/redstone-finance/redstone-smartweave/blob/67d4774/src/contract/HandlerBasedContract.ts#L184">projects/redstone/redstone-smartweave/src/contract/HandlerBasedContract.ts:184</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Writes a new &quot;interaction&quot; transaction - ie. such transaction that stores input for the contract.</p>
+								</div>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>Input</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>input: <span class="tsd-signature-type">Input</span></h5>
+								</li>
+								<li>
+									<h5>tags: <a href="../modules.html#Tags" class="tsd-signature-type" data-tsd-kind="Type alias">Tags</a><span class="tsd-signature-symbol"> = []</span></h5>
+								</li>
+								<li>
+									<h5>transfer: <a href="../modules.html#ArTransfer" class="tsd-signature-type" data-tsd-kind="Type alias">ArTransfer</a><span class="tsd-signature-symbol"> = ...</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-has-type-parameter">
+						<a href="HandlerBasedContract.html" class="tsd-kind-icon">Handler<wbr>Based<wbr>Contract</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter">
+								<a href="HandlerBasedContract.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="HandlerBasedContract.html#evaluationOptions" class="tsd-kind-icon">evaluation<wbr>Options</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="HandlerBasedContract.html#networkInfo" class="tsd-kind-icon">network<wbr>Info</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="HandlerBasedContract.html#wallet" class="tsd-kind-icon">wallet</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="HandlerBasedContract.html#connect" class="tsd-kind-icon">connect</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="HandlerBasedContract.html#createExecutionContext" class="tsd-kind-icon">create<wbr>Execution<wbr>Context</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="HandlerBasedContract.html#createExecutionContextFromTx" class="tsd-kind-icon">create<wbr>Execution<wbr>Context<wbr>From<wbr>Tx</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="HandlerBasedContract.html#maybeClearNetworkInfo" class="tsd-kind-icon">maybe<wbr>Clear<wbr>Network<wbr>Info</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="HandlerBasedContract.html#readState" class="tsd-kind-icon">read<wbr>State</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="HandlerBasedContract.html#setEvaluationOptions" class="tsd-kind-icon">set<wbr>Evaluation<wbr>Options</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+								<a href="HandlerBasedContract.html#viewState" class="tsd-kind-icon">view<wbr>State</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+								<a href="HandlerBasedContract.html#viewStateForTx" class="tsd-kind-icon">view<wbr>State<wbr>For<wbr>Tx</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="HandlerBasedContract.html#waitForConfirmation" class="tsd-kind-icon">wait<wbr>For<wbr>Confirmation</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+								<a href="HandlerBasedContract.html#writeInteraction" class="tsd-kind-icon">write<wbr>Interaction</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
